@@ -39,11 +39,23 @@
               t-on-dblclick="() => this.createFile()"
               t-on-keydown="(ev) => this.handleFormatKeydown(fmt.ext, ev)"
             >
-              <img
-                class="o-oo-format-icon mb-1"
-                t-att-src="'/onlyoffice_odoo_documents/static/svg/formats/' + fmt.ext + '.svg'"
+              <i
+                t-if="fmt.ext === 'docx'"
+                class="fa fa-file-text-o o-oo-format-icon mb-1"
                 t-att-alt="fmt.label"
-                style="width: 48px; height: 48px;"
+                style="font-size: 48px;"
+              />
+              <i
+                t-if="fmt.ext === 'xlsx'"
+                class="fa fa-file-excel-o o-oo-format-icon mb-1"
+                t-att-alt="fmt.label"
+                style="font-size: 48px;"
+              />
+              <i
+                t-if="fmt.ext === 'pptx'"
+                class="fa fa-file-powerpoint-o o-oo-format-icon mb-1"
+                t-att-alt="fmt.label"
+                style="font-size: 48px;"
               />
               <span class="small text-muted" t-esc="fmt.label"/>
             </div>

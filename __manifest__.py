@@ -12,7 +12,7 @@
     "support": "contacto@vicbas.com",
     "category": "Productivity",
     "version": "19.0.1.0.0",
-    "depends": ["mail", "onlyoffice_odoo", "onlyoffice_odoo_documents"],
+    "depends": ["mail", "onlyoffice_odoo"],
     "data": [],
     "assets": {
         "web.assets_backend": [
