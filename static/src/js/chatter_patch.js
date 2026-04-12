@@ -117,9 +117,9 @@ patch(Chatter.prototype, {
 
   openOnlyofficeDialog() {
     this.dialog.add(OnlyofficeChatterCreateDialog, {
-      // Odoo 19: el Chatter expone threadModel y threadId, NO resModel/resId
-      resModel: this.props.threadModel,
-      resId: this.props.threadId,
+      // Odoo 17: Chatter exposes resModel and resId directly
+      resModel: this.props.resModel,
+      resId: this.props.resId,
       onCreated: async () => {
         try {
           if (
