@@ -1,107 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<templates id="template" xml:space="preserve">
+<odoo>
 
-  <!-- ============================================================
-       Diálogo OWL: selector de formato y título del nuevo archivo
-       ============================================================ -->
-  <t t-name="onlyoffice_chatter.CreateDialog" owl="1">
-    <div>
-      <Dialog
-        title="dialogTitle"
-        contentClass="'o-oo-chatter-create-dialog'"
-        footer="true"
-      >
-        <!-- Nombre del documento -->
-        <div class="mb-3">
-          <label class="o_form_label fw-bold" for="oo_chatter_title">
-            <t t-esc="labels.title"/>
-          </label>
-          <input
-            class="o_input form-control mt-1"
-            id="oo_chatter_title"
-            t-model.trim="state.title"
-            type="text"
-            autocomplete="off"
-            t-ref="autofocus"
-            t-att-placeholder="labels.placeholder"
-          />
-        </div>
-
-        <!-- Selector de formato -->
-        <div class="d-flex gap-3 justify-content-center py-2">
-          <t t-foreach="formats" t-as="fmt" t-key="fmt.ext">
-            <div
-              role="button"
-              tabindex="0"
-              class="o-oo-format-card d-flex flex-column align-items-center p-2 rounded cursor-pointer"
-              t-att-class="state.selectedFormat === fmt.ext ? 'o-oo-format-selected border border-primary' : 'border border-transparent'"
-              t-on-click="() => this.selectFormat(fmt.ext)"
-              t-on-dblclick="() => this.createFile()"
-              t-on-keydown="(ev) => this.handleFormatKeydown(fmt.ext, ev)"
-            >
-              <i
-                t-if="fmt.ext === 'docx'"
-                class="fa fa-file-text-o o-oo-format-icon mb-1"
-                role="img"
-                t-att-aria-label="fmt.label"
-              />
-              <i
-                t-if="fmt.ext === 'xlsx'"
-                class="fa fa-file-excel-o o-oo-format-icon mb-1"
-                role="img"
-                t-att-aria-label="fmt.label"
-              />
-              <i
-                t-if="fmt.ext === 'pptx'"
-                class="fa fa-file-powerpoint-o o-oo-format-icon mb-1"
-                role="img"
-                t-att-aria-label="fmt.label"
-              />
-              <span class="small text-muted" t-esc="fmt.label"/>
+    <!-- ============================================================
+         QWeb template for the creation dialog (legacy Widget)
+         ============================================================ -->
+    <template id="onlyoffice_chatter.CreateDialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content o-oo-chatter-create-dialog">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create with ONLYOFFICE</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- Document title -->
+                    <div class="mb-3">
+                        <label class="o_form_label fw-bold" for="oo_chatter_title">Title</label>
+                        <input
+                            class="o_input form-control mt-1"
+                            id="oo_chatter_title"
+                            type="text"
+                            autocomplete="off"
+                            placeholder="New Document"
+                            value="New Document"
+                        />
+                    </div>
+                    <!-- Format selector -->
+                    <div class="d-flex gap-3 justify-content-center py-2">
+                        <t t-foreach="widget.formats" t-as="fmt">
+                            <div
+                                role="button"
+                                tabindex="0"
+                                t-att-data-ext="fmt.ext"
+                                class="o-oo-format-card d-flex flex-column align-items-center p-2 rounded cursor-pointer border border-transparent"
+                            >
+                                <i t-attf-class="fa #{fmt.icon} o-oo-format-icon mb-1"
+                                   role="img" t-att-aria-label="fmt.label"/>
+                                <span class="small text-muted" t-esc="fmt.label"/>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        <span class="spinner-border spinner-border-sm me-1 d-none" role="status"/>
+                        <span class="o-oo-btn-text">Create</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                </div>
             </div>
-          </t>
         </div>
+    </template>
 
-        <t t-set-slot="footer">
-          <button
-            class="btn btn-primary"
-            t-att-disabled="isButtonDisabled()"
-            t-on-click="() => this.createFile()"
-          >
-            <t t-if="state.isCreating">
-              <span class="spinner-border spinner-border-sm me-1" role="status"/>
-              <t t-esc="labels.creating"/>
-            </t>
-            <t t-else="">
-              <t t-esc="labels.create"/>
-            </t>
-          </button>
-          <button class="btn btn-secondary" t-on-click="data.close">
-            <t t-esc="labels.cancel"/>
-          </button>
-        </t>
-      </Dialog>
-    </div>
-  </t>
+    <!-- ============================================================
+         Inject "New" button into Chatter topbar
+         Odoo 15: mail.chatter.Topbar template
+         ============================================================ -->
+    <template id="onlyoffice_chatter.chatter_button"
+              inherit_id="mail.chatter.Topbar"
+              name="OnlyOffice New Button">
+        <xpath expr="//div[hasclass('o_topbar_right_area')]" position="inside">
+            <button type="button"
+                    class="btn btn-secondary text-nowrap ms-1 o_mail_chatter_button_oo_new"
+                    title="Create OnlyOffice Document">
+                <i class="fa fa-file-o me-1" aria-hidden="true"/>
+                New
+            </button>
+        </xpath>
+    </template>
 
-  <!-- ============================================================
-       Herencia de mail.Chatter — inyecta el botón "Nuevo"
-       ============================================================ -->
-  <t t-name="onlyoffice_chatter.ChatterPatch"
-     t-inherit="mail.Chatter"
-     t-inherit-mode="extension">
-    <xpath expr="//button[hasclass('o-mail-Chatter-activity')]" position="after">
-      <button
-        type="button"
-        class="btn btn-secondary text-nowrap ms-1"
-        t-att-class="{ 'my-2': !props.compactHeight }"
-        t-att-title="ooLabels.buttonTitle"
-        t-on-click="openOnlyofficeDialog"
-      >
-        <i class="fa fa-file-o me-1" aria-hidden="true"/>
-        <t t-esc="ooLabels.buttonText"/>
-      </button>
-    </xpath>
-  </t>
-
-</templates>
+</odoo>

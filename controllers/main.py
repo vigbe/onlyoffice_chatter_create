@@ -1,3 +1,4 @@
+import base64
 import logging
 import re
 
@@ -94,11 +95,12 @@ class OnlyofficeChatterController(http.Controller):
             mimetype = file_utils.get_mime_by_ext(supported_format)
             filename = f"{title}.{supported_format}"
 
+            # Odoo 15: ir.attachment uses 'datas' (base64), not 'raw'
             attachment = request.env["ir.attachment"].create(
                 {
                     "name": filename,
                     "mimetype": mimetype,
-                    "raw": file_data,
+                    "datas": base64.b64encode(file_data),
                     "res_model": res_model,
                     "res_id": res_id_int,
                 }
