@@ -42,20 +42,20 @@
               <i
                 t-if="fmt.ext === 'docx'"
                 class="fa fa-file-text-o o-oo-format-icon mb-1"
-                t-att-alt="fmt.label"
-                style="font-size: 48px;"
+                role="img"
+                t-att-aria-label="fmt.label"
               />
               <i
                 t-if="fmt.ext === 'xlsx'"
                 class="fa fa-file-excel-o o-oo-format-icon mb-1"
-                t-att-alt="fmt.label"
-                style="font-size: 48px;"
+                role="img"
+                t-att-aria-label="fmt.label"
               />
               <i
                 t-if="fmt.ext === 'pptx'"
                 class="fa fa-file-powerpoint-o o-oo-format-icon mb-1"
-                t-att-alt="fmt.label"
-                style="font-size: 48px;"
+                role="img"
+                t-att-aria-label="fmt.label"
               />
               <span class="small text-muted" t-esc="fmt.label"/>
             </div>

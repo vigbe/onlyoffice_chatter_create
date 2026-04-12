@@ -15,31 +15,31 @@ class OnlyofficeChatterCreateDialog extends Component {
   static components = { Dialog };
   static template = "onlyoffice_chatter.CreateDialog";
 
-  formats = [
-    { ext: "docx", label: _t("Documento") },
-    { ext: "xlsx", label: _t("Hoja de cálculo") },
-    { ext: "pptx", label: _t("Presentación") },
-  ];
-
   setup() {
     this.data = this.env.dialogData;
     this.notification = useService("notification");
     useAutofocus();
 
-    this.dialogTitle = _t("Crear con ONLYOFFICE");
+    this.formats = [
+      { ext: "docx", label: _t("Document") },
+      { ext: "xlsx", label: _t("Spreadsheet") },
+      { ext: "pptx", label: _t("Presentation") },
+    ];
+
+    this.dialogTitle = _t("Create with ONLYOFFICE");
 
     this.labels = {
-      title: _t("Título"),
-      placeholder: _t("Nuevo documento"),
-      creating: _t("Creando..."),
-      create: _t("Crear"),
-      cancel: _t("Cancelar"),
+      title: _t("Title"),
+      placeholder: _t("New Document"),
+      creating: _t("Creating..."),
+      create: _t("Create"),
+      cancel: _t("Cancel"),
     };
 
     this.state = useState({
       isCreating: false,
       selectedFormat: "docx",
-      title: _t("Nuevo documento"),
+      title: _t("New Document"),
     });
   }
 
@@ -75,7 +75,7 @@ class OnlyofficeChatterCreateDialog extends Component {
         return;
       }
 
-      this.notification.add(_t("Documento creado correctamente"), {
+      this.notification.add(_t("Document created successfully"), {
         type: "success",
         sticky: false,
       });
@@ -85,12 +85,13 @@ class OnlyofficeChatterCreateDialog extends Component {
       }
 
       if (result.url) {
-        window.location.href = result.url;
+        window.open(result.url, "_blank");
       }
 
       this.data.close();
     } catch (e) {
-      this.notification.add(_t("Error al crear el documento"), {
+      console.error("OnlyOffice Chatter: createFile failed", e);
+      this.notification.add(_t("Error creating document"), {
         type: "danger",
         sticky: false,
       });
@@ -109,8 +110,8 @@ patch(Chatter.prototype, {
     this.dialog = useService("dialog");
 
     this.ooLabels = {
-      buttonTitle: _t("Crear documento OnlyOffice"),
-      buttonText: _t("Nuevo"),
+      buttonTitle: _t("Create OnlyOffice Document"),
+      buttonText: _t("New"),
     };
   },
 
@@ -134,8 +135,8 @@ patch(Chatter.prototype, {
           ) {
             await this.props.onSave();
           }
-        } catch {
-          // Silently fail — attachment list will refresh on next render
+        } catch (err) {
+          console.warn("OnlyOffice Chatter: could not refresh attachments", err);
         }
       },
     });

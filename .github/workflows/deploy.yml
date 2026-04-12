@@ -32,8 +32,8 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: "projects/670649208826/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider"
-          service_account: "github-deploy-sa@odoo-ia-prop-com.iam.gserviceaccount.com"
+          workload_identity_provider: "${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}"
+          service_account: "${{ secrets.GCP_SERVICE_ACCOUNT }}"
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
@@ -45,8 +45,8 @@ jobs:
 
           echo "🚀 Triggering deployment for $MODULE_NAME to $ENVIRONMENT"
 
-          gcloud compute ssh vigbe@odoo-app-01 \
-            --project=odoo-ia-prop-com \
-            --zone=southamerica-west1-b \
+          gcloud compute ssh ${{ secrets.GCP_SSH_USER }}@${{ secrets.GCP_VM_NAME }} \
+            --project=${{ secrets.GCP_PROJECT_ID }} \
+            --zone=${{ secrets.GCP_ZONE }} \
             --tunnel-through-iap \
             --command="cd ~/odoo_deploy_files && ./deploy_module.sh \"$MODULE_NAME\" \"$ENVIRONMENT\""
