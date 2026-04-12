@@ -44,6 +44,7 @@ class OnlyofficeChatterController(http.Controller):
         result = {"error": None, "attachment_id": None, "url": None}
 
         try:
+            # --- Input validation (before any access checks) ---
             if supported_format not in self._ALLOWED_FORMATS:
                 raise ValueError(
                     _(
@@ -53,23 +54,6 @@ class OnlyofficeChatterController(http.Controller):
                     )
                 )
 
-            if res_model not in request.env:
-                raise ValueError(_("Model '%(model)s' not found.", model=res_model))
-
-            if not hasattr(request.env[res_model], "message_post"):
-                raise ValueError(
-                    _(
-                        "Model '%(model)s' does not support Chatter (mail.thread).",
-                        model=res_model,
-                    )
-                )
-
-            record = request.env[res_model].browse(int(res_id))
-            record.ensure_one()
-            record.check_access_rights("write")
-            record.check_access_rule("write")
-
-            # Validate and sanitize title
             title = title.strip()
             if not title:
                 raise ValueError(_("Title cannot be empty."))
@@ -77,6 +61,25 @@ class OnlyofficeChatterController(http.Controller):
                 raise ValueError(_("Title must not exceed 100 characters."))
             title = _UNSAFE_FILENAME_CHARS.sub("_", title)
 
+            # --- Model validation (generic message to prevent enumeration) ---
+            if res_model not in request.env or not hasattr(
+                request.env[res_model], "message_post"
+            ):
+                raise ValueError(
+                    _(
+                        "Model '%(model)s' is not found or does not support Chatter.",
+                        model=res_model,
+                    )
+                )
+
+            # --- Access control ---
+            res_id_int = int(res_id)
+            record = request.env[res_model].browse(res_id_int)
+            record.ensure_one()
+            record.check_access_rights("write")
+            record.check_access_rule("write")
+
+            # --- Template loading ---
             lang = request.env.user.lang or "en_US"
             file_data = file_utils.get_default_file_template(lang, supported_format)
 
@@ -97,7 +100,7 @@ class OnlyofficeChatterController(http.Controller):
                     "mimetype": mimetype,
                     "raw": file_data,
                     "res_model": res_model,
-                    "res_id": int(res_id),
+                    "res_id": res_id_int,
                 }
             )
 
@@ -109,7 +112,7 @@ class OnlyofficeChatterController(http.Controller):
                 filename,
                 attachment.id,
                 res_model,
-                res_id,
+                res_id_int,
                 request.env.user.login,
             )
 
