@@ -15,9 +15,7 @@
     "depends": ["mail", "onlyoffice_odoo"],
     "data": [],
     "images": [
-        "static/description/images/main_screenshot.png",
-        "static/description/images/step1_button.png",
-        "static/description/images/step2_dialog.png",
+        "static/description/thumbnail.png",
     ],
     "assets": {
         "web.assets_backend": [
