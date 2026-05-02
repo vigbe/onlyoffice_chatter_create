@@ -17,115 +17,115 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Document"
 msgstr "文档"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Spreadsheet"
 msgstr "电子表格"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Presentation"
 msgstr "演示文稿"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create with ONLYOFFICE"
 msgstr "使用 ONLYOFFICE 创建"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Title"
 msgstr "标题"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "New Document"
 msgstr "新建文档"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Creating..."
 msgstr "创建中..."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create"
 msgstr "创建"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Cancel"
 msgstr "取消"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Document created successfully"
 msgstr "文档创建成功"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Error creating document"
 msgstr "创建文档时出错"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create OnlyOffice Document"
 msgstr "创建 OnlyOffice 文档"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "New"
 msgstr "新建"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Unsupported format '%(fmt)s'. Allowed: %(allowed)s"
 msgstr "不支持格式「%(fmt)s」。允许的格式：%(allowed)s"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Model '%(model)s' is not found or does not support Chatter."
 msgstr "模型「%(model)s」未找到或不支持 Chatter。"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Title cannot be empty."
 msgstr "标题不能为空。"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Title must not exceed 100 characters."
 msgstr "标题不能超过100个字符。"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Could not load template for format '%(fmt)s'."
 msgstr "无法加载格式「%(fmt)s」的模板。"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Unexpected error creating document. Please try again."
 msgstr "创建文档时发生意外错误。请重试。"

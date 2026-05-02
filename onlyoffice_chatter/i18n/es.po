@@ -17,115 +17,115 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Document"
 msgstr "Documento"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Spreadsheet"
 msgstr "Hoja de cálculo"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Presentation"
 msgstr "Presentación"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create with ONLYOFFICE"
 msgstr "Crear con ONLYOFFICE"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Title"
 msgstr "Título"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "New Document"
 msgstr "Nuevo documento"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Creating..."
 msgstr "Creando..."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create"
 msgstr "Crear"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Document created successfully"
 msgstr "Documento creado correctamente"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Error creating document"
 msgstr "Error al crear el documento"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "Create OnlyOffice Document"
 msgstr "Crear documento OnlyOffice"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js
+#: code:addons/onlyoffice_chatter/static/src/js/chatter_patch.js:0
 #, python-format
 msgid "New"
 msgstr "Nuevo"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Unsupported format '%(fmt)s'. Allowed: %(allowed)s"
 msgstr "Formato '%(fmt)s' no soportado. Permitidos: %(allowed)s"
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Model '%(model)s' is not found or does not support Chatter."
 msgstr "El modelo '%(model)s' no se encuentra o no soporta Chatter."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Title cannot be empty."
 msgstr "El título no puede estar vacío."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Title must not exceed 100 characters."
 msgstr "El título no debe exceder los 100 caracteres."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Could not load template for format '%(fmt)s'."
 msgstr "No se pudo cargar la plantilla para el formato '%(fmt)s'."
 
 #. module: onlyoffice_chatter
-#: code:addons/onlyoffice_chatter/controllers/main.py
+#: code:addons/onlyoffice_chatter/controllers/main.py:0
 #, python-format
 msgid "Unexpected error creating document. Please try again."
 msgstr "Error inesperado al crear el documento. Por favor, intente de nuevo."
