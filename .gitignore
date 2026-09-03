@@ -67,3 +67,6 @@ Thumbs.db
 # Odoo
 *.pyc
 odoo.conf
+# Local Pi runtime state
+.atl/
+.codegraph/
