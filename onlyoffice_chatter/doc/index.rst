@@ -88,4 +88,4 @@ Support
 For bug reports, feature requests, or questions:
 
 - Email: contacto@vicbas.com
-- Website: https://vicbas.com/addons_odoo.html
+- Website: https://vicbas.com

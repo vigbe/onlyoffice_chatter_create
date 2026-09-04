@@ -7,7 +7,7 @@
         "Works with Odoo Community Edition. Does not require the Enterprise Documents app."
     ),
     "author": "Victor Bastías Escobar",
-    "website": "https://vicbas.com/addons_odoo.html",
+    "website": "https://vicbas.com",
     "support": "contacto@vicbas.com",
     "maintainer": "Victor Bastías Escobar",
     "category": "Productivity",
