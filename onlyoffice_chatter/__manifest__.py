@@ -1,4 +1,4 @@
-{
+{  # noqa: B018  # pyright: ignore[reportUnusedExpression]  # Odoo manifests must stay a bare module-level dict: Odoo loads them via ast.literal_eval
     "name": "ONLYOFFICE Chatter Integration",
     "summary": "Create OnlyOffice documents directly from the Chatter of any record.",
     "description": (

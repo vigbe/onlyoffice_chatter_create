@@ -53,5 +53,5 @@ Addon para Odoo que permite crear documentos OnlyOffice directamente desde el Ch
 ## Autor
 
 - Victor Bastías Escobar
-- Sitio: https://vicbas.com
-- Soporte: contacto@vicbas.com, contacto@vibasertec.com
+- Sitio: <https://vicbas.com>
+- Soporte: <contacto@vicbas.com>, <contacto@vibasertec.com>
