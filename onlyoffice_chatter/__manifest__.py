@@ -13,9 +13,7 @@
     "category": "Productivity",
     "version": "16.0.1.0.0",
     "depends": ["mail", "onlyoffice_odoo"],
-    "data": [
-        "static/src/xml/chatter_patch.xml",
-    ],
+    "data": [],
     "images": [
         "static/description/thumbnail.png",
     ],
@@ -23,6 +21,7 @@
         "web.assets_backend": [
             "onlyoffice_chatter/static/src/scss/chatter_dialog.scss",
             "onlyoffice_chatter/static/src/js/chatter_patch.js",
+            "onlyoffice_chatter/static/src/xml/chatter_patch.xml",
         ],
     },
     "installable": True,
