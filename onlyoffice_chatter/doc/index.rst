@@ -17,12 +17,12 @@ Prerequisites
 
 1. **onlyoffice_odoo** module must be installed and configured.
    Available on the `Odoo Apps Store
-   <https://apps.odoo.com/apps/modules/19.0/onlyoffice_odoo/>`_.
+   <https://apps.odoo.com/apps/modules/20.0/onlyoffice_odoo/>`_.
 
 2. An **ONLYOFFICE Document Server** must be running and accessible
    from the Odoo instance.
 
-3. **Odoo 19.0** (Community or Enterprise).
+3. **Odoo 20.0** (Community or Enterprise).
 
 Installation
 ============
